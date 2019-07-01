@@ -4,6 +4,9 @@
 
 > Unity remake atari game Pong
 
+Gameplay
+[![Gameplay](https://github.com/ExpressoBits/Pong-Remake/blob/master/Docs/gameplay.gif)]
+
 ## Install
 
 ```sh
