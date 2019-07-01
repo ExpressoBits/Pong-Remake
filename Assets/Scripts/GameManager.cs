@@ -14,6 +14,12 @@ namespace Pong
         public Text player1Score;
         public Text player2Score;
 
+        private AudioSource _audioSource;
+
+        private void Awake() {
+            _audioSource = GetComponent<AudioSource>();
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -30,6 +36,7 @@ namespace Pong
         {
             player1Score.text = playerOne.points + "";
             player2Score.text = playerTwo.points + "";
+            _audioSource.Play();
         }
 
     }

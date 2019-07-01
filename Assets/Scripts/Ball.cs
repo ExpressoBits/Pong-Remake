@@ -10,10 +10,12 @@ namespace Pong
         public float initialForce = 200f;
 
         private Rigidbody2D _rigidBody2D;
+        private AudioSource _audioSource;
 
         private void Awake()
         {
             _rigidBody2D = GetComponent<Rigidbody2D>();
+            _audioSource = GetComponent<AudioSource>();
         }
 
         // Start is called before the first frame update
@@ -32,6 +34,10 @@ namespace Pong
             _rigidBody2D.velocity = Vector2.zero;
             _rigidBody2D.AddForce((Random.Range(0,2)==0?Vector2.left:Vector2.right) * initialForce);
             transform.position = Vector2.zero;
+        }
+
+        private void OnCollisionEnter2D(Collision2D other) {
+            _audioSource.Play();
         }
     }
 

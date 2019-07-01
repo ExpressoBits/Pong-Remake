@@ -8,9 +8,19 @@ namespace Pong
     {
 
         public int points;
+        public float speed = 16f;
+        public float forceUpDownBall = 256f;
 
 
-        public void IncrementPoints(){
+        private Rigidbody2D _rigidBody2D;
+
+        private void Awake()
+        {
+            _rigidBody2D = GetComponent<Rigidbody2D>();
+        }
+
+        public void IncrementPoints()
+        {
             points++;
         }
 
@@ -20,8 +30,26 @@ namespace Pong
             points = 0;
         }
 
-        private void Update() {
-            
+        private void FixedUpdate()
+        {
+            //_rigidBody2D.velocity = new Vector2(0, Input.GetAxis("Vertical") * speed);
+            transform.position += Vector3.up * Input.GetAxis("Vertical");
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.tag == "Ball")
+            {
+                Debug.Log("SDAS");
+                float y = other.gameObject.transform.position.y;
+                if (y-0.5f > transform.position.y)
+                {
+                    other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * forceUpDownBall);
+                }
+                else if (y+0.5f < transform.position.y){
+                    other.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.down * forceUpDownBall);
+                }
+            }
         }
 
     }
