@@ -5,13 +5,11 @@
 > Unity remake atari game Pong
 
 Gameplay
-[![Gameplay](https://github.com/ExpressoBits/Pong-Remake/blob/master/Docs/gameplay.gif)]
+![Gameplay](https://github.com/ExpressoBits/Pong-Remake/blob/master/Docs/gameplay.gif)
 
 ## Install
 
-```sh
-npm install
-```
+Comming soon
 
 ## Author
 
@@ -24,7 +22,6 @@ npm install
 
 Give a ⭐️ if this project helped you!
 
-[![support us](https://img.shields.io/badge/become-a patreon%20us-orange.svg?cacheSeconds=2592000)](https://www.patreon.com/ScriptsEngineer)
 
 
 ***
